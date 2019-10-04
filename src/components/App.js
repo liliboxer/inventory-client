@@ -4,7 +4,7 @@ import Item from './Item';
 
 export default function App() {
   return (
-    <Item item={{ category: 'test', name: 'test', count: 3 }}/>
+    <Item item={{ category: 'pets', name: 'max', count: 1 }}/>
   );
 }
   

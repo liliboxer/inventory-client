@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Item.css';
 
 function Item({ item }) {
   return (
-    <section>
-      Working
-      <div>
-        <h6>{item.category}</h6>
+    <section className={styles.Item}>
+      <div className={styles.itemContent}>
+        <h3>{item.category}</h3>
         <p>{item.name}</p>
       </div>
-      <div>
+      <div className={styles.itemCount}>
         <button>-</button>
         <p>{item.count}</p>
         <button>+</button>
       </div>
+   
     </section>
   );
 }
