@@ -2,18 +2,4 @@
   h3 {
     color: red;
   }
-
-  .itemContent {
-    border: 1px solid green;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-  }
-
-  .itemCount {
-    border: 1px solid red;
-    display: flex;
-
-  }
 }

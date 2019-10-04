@@ -1,10 +1,13 @@
 import React from 'react';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Item from './Item';
+import Items from './Items';
 
 export default function App() {
   return (
-    <Item item={{ category: 'pets', name: 'max', count: 1 }}/>
+    <Items items={[
+      { category: 'pets', name: 'max', count: 2 },
+      { category: 'clothing', name: 'boots', count: 1 },
+      { category: 'electronics', name: 'computer', count: 1 },
+    ]}/>
   );
 }
   
