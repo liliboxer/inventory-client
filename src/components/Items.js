@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
+import styles from './Items.css';
 
 function Items({ items }) {
   const itemsElement = items.map(item => (
@@ -10,7 +11,7 @@ function Items({ items }) {
   ));
   
   if(items.length === 0) return 'No items catalogued';
-  return <ul>{itemsElement}</ul>;
+  return <ul className={styles.Items}>{itemsElement}</ul>;
 }
 
 Items.propTypes = {

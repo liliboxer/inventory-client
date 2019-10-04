@@ -1,5 +1,46 @@
 .Item {
-  h3 {
-    color: red;
+  margin: 10px auto;
+  width: 100%;
+
+  p {
+    margin: 0;
   }
+
+  button {
+    border: none;
+    outline: none;
+  }
+
+  .itemWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .itemContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  .category {
+    color: grey;
+    font-size: .75rem;
+  }
+
+  .itemCount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 7vw;
+  }
+
+  .count {
+    font-size: 1rem;
+  }
+
 }

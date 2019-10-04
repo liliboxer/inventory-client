@@ -5,16 +5,18 @@ import styles from './Item.css';
 function Item({ item }) {
   return (
     <section className={styles.Item}>
-      <div className={styles.itemContent}>
-        <h3>{item.category}</h3>
-        <p>{item.name}</p>
+      <div className={styles.itemWrapper}>
+        <div className={styles.itemContent}>
+          <p className={styles.name}>{item.name}</p>
+          <p className={styles.category}>{item.category}</p>
+        </div>
+        <div className={styles.itemCount}>
+          <button>-</button>
+          <p className={styles.count}>{item.count}</p>
+          <button>+</button>
+        </div>
+
       </div>
-      <div className={styles.itemCount}>
-        <button>-</button>
-        <p>{item.count}</p>
-        <button>+</button>
-      </div>
-   
     </section>
   );
 }
