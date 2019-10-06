@@ -1,0 +1,9 @@
+@import url('./Globals.css');
+
+.Footer {
+  position: fixed;
+  text-align: center;
+  bottom: 30px;
+  width: 100vw;
+  background: white;
+}

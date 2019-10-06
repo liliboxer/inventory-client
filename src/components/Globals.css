@@ -13,5 +13,13 @@ fieldset {
 h1, p {
   margin: 0;
   font-family: 'Palanquin', sans-serif;
+}
 
+a {
+  font-family: 'Palanquin', sans-serif;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
 }
