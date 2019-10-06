@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Palanquin&display=swap');
+
+button {
+  border: none;
+  outline: none;
+  font-family: 'Palanquin', sans-serif;
+}
+
+fieldset {
+  border: none;
+}
+
+h1, p {
+  margin: 0;
+  font-family: 'Palanquin', sans-serif;
+
+}

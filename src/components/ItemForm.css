@@ -1,0 +1,8 @@
+@import url('./Globals.css');
+
+.ItemForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
