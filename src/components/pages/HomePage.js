@@ -1,11 +1,10 @@
 import React from 'react';
-import Items from '../Items';
-import ItemForm from '../ItemForm';
+import Items from '../item/Items';
+import ItemForm from '../item/ItemForm';
 import Header from '../Header';
 import Footer from '../Footer';
 
 export default function HomePage() {
-
   return (
     <>
       <Header />
