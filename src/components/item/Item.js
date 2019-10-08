@@ -10,12 +10,11 @@ function Item({ item }) {
           <p className={styles.name}>{item.name}</p>
           <p className={styles.category}>{item.category}</p>
         </div>
-        <div className={styles.itemCount}>
+        <div className={styles.itemQuantity}>
           <button>-</button>
-          <p className={styles.count}>{item.count}</p>
+          <p className={styles.quantity}>{item.quantity}</p>
           <button>+</button>
         </div>
-
       </div>
     </section>
   );
@@ -25,11 +24,8 @@ Item.propTypes = {
   item: PropTypes.shape({ 
     category: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    count: PropTypes.number.isRequired 
+    quantity: PropTypes.number.isRequired 
   }).isRequired
 };
 
 export default Item;
-
-
-// item: category, name, count
