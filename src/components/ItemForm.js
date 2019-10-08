@@ -22,6 +22,9 @@ function ItemForm() {
       <fieldset>
         <input type="text" placeholder="item"></input>
       </fieldset>
+      <fieldset>
+        <input type="number" placeholder="quantity"></input>
+      </fieldset>
       <button>Submit</button>
     </form>
   );
