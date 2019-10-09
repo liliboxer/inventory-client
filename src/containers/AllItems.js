@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-// import Items from '../components/item/Items';
+import Items from '../components/item/Items';
 import { getItemsState } from '../selectors/itemSelectors';
 import { fetchItems } from '../actions/itemActions';
 
@@ -19,12 +19,12 @@ class AllItems extends Component {
   }
 
   render() {
-    return 'HI';
+    return 'Items list goes here';
   }
 }
 
 const mapStateToProps = state => {
-  console.log(state);
+  console.log(state.items);
   return {  items: getItemsState(state) };
 };
 
