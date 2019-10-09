@@ -7,6 +7,7 @@ export const postItem = item => {
     body: JSON.stringify({ item })
   })
     .then(res => {
+      console.log('hi jake');
       if(!res.ok) throw 'unable to post item';
       return res.json();
     });

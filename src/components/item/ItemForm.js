@@ -20,8 +20,8 @@ function ItemForm(props) {
   return (
     <form className={styles.ItemForm} onSubmit={() => handleSubmit(item)}>
       <fieldset>
-        <select name="categories">
-          <option selected disabled hidden>Select Category</option>
+        <select defaultValue={'DEFAULT'} name="categories">
+          <option value="DEFAULT" disabled>Category</option>
           {createOptions(categories)}
         </select>
       </fieldset>
