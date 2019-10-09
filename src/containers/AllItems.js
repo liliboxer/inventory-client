@@ -19,7 +19,8 @@ class AllItems extends Component {
   }
 
   render() {
-    return 'Items list goes here';
+    const { items } = this.props.state;
+    return <Items items={items}/>;
   }
 }
 
