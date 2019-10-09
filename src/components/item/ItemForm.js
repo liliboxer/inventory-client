@@ -24,7 +24,9 @@ function ItemForm(props) {
           defaultValue={'DEFAULT'} 
           name="categories"
           onChange={e => updateItem({ ...item, category: e.target.value })}>
-          <option value="DEFAULT" disabled>Category</option>
+          <option 
+            value="DEFAULT" 
+            disabled>Category</option>
           {createOptions(categories)}
         </select>
       </fieldset>

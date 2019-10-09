@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin&display=swap');
 
 button {
-  border: none;
+  border: 1px solid grey;
+  background: none;
   outline: none;
   font-family: 'Palanquin', sans-serif;
 }
