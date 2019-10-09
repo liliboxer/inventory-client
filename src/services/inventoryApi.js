@@ -1,5 +1,5 @@
 export const postItem = item => {
-  return fetch('https://lili-inventory.herokuapp.com/api/v1/items', {
+  return fetch('http://localhost:7891/api/v1/items', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

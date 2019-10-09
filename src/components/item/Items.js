@@ -4,8 +4,8 @@ import Item from './Item';
 import styles from './Items.css';
 
 function Items({ items }) {
-  const itemsElement = items.map(item => (
-    <li key={item._id}>
+  const itemsElement = items.map((item, i) => (
+    <li key={i}>
       <Item item={item}/>
     </li>
   ));
@@ -15,7 +15,7 @@ function Items({ items }) {
 }
 
 Items.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.array
 };
 
 export default Items;
