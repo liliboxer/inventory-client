@@ -13,14 +13,17 @@ function ItemForm(props) {
   const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
   const createOptions = options => {
     return options.map(option => (
-      <option key={option} value='${option}'>{option}</option>
+      <option key={option} value={option} >{option}</option>
     ));
   };
   
   return (
     <form className={styles.ItemForm} onSubmit={() => handleSubmit(item)}>
       <fieldset>
-        <select defaultValue={'DEFAULT'} name="categories">
+        <select 
+          defaultValue={'DEFAULT'} 
+          name="categories"
+          onChange={e => updateItem({ ...item, category: e.target.value })}>
           <option value="DEFAULT" disabled>Category</option>
           {createOptions(categories)}
         </select>

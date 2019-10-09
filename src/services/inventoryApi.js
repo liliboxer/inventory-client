@@ -1,4 +1,5 @@
 export const postItem = item => {
+  console.log('hi jake');
   return fetch('http://localhost:7891/api/v1/items', {
     method: 'POST',
     headers: {
@@ -7,7 +8,7 @@ export const postItem = item => {
     body: JSON.stringify({ item })
   })
     .then(res => {
-      console.log('hi jake');
+      console.log(item);
       if(!res.ok) throw 'unable to post item';
       return res.json();
     });
