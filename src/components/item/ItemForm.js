@@ -19,10 +19,7 @@ function ItemForm(props) {
   
   return (
     <form className={styles.ItemForm} 
-      onSubmit={() => {
-        handleSubmit(item), 
-        updateItem('');
-      }}>
+      onSubmit={() => handleSubmit(item)}>
       <fieldset>
         <select 
           defaultValue={'DEFAULT'} 

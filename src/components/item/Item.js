@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './Item.css';
 
 function Item({ item }) {
-  console.log('item', typeof item);
   return (
     <section className={styles.Item}>
       <div className={styles.itemWrapper}>
