@@ -8,9 +8,7 @@ import { fetchItems } from '../actions/itemActions';
 
 class AllItems extends Component {
   static propTypes = {
-    state: PropTypes.shape({
-      items: PropTypes.array
-    }),
+    items: PropTypes.array.isRequired,
     fetch: PropTypes.func.isRequired
   }
 
@@ -19,15 +17,14 @@ class AllItems extends Component {
   }
 
   render() {
-    const { items } = this.props.state;
+    const { items } = this.props;
     return <Items items={items}/>;
   }
 }
 
-const mapStateToProps = state => {
-  console.log(state.items);
-  return {  items: getItemsState(state) };
-};
+const mapStateToProps = state => ({
+  items: getItemsState(state)
+});
 
 const mapDispatchToProps = dispatch => ({
   fetch() {

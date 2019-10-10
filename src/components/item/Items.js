@@ -4,6 +4,7 @@ import Item from './Item';
 import styles from './Items.css';
 
 function Items({ items }) {
+  console.log('items', items);
   const itemsElement = items.map((item, i) => (
     <li key={i}>
       <Item item={item}/>

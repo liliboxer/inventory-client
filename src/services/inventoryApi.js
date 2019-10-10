@@ -13,7 +13,6 @@ export const postItem = item => {
 };
 
 export const getItemsApi = () => {
-  console.log('hi');
   return fetch('http://localhost:7891/api/v1/items', {
     headers: {
       'Content-Type': 'application/json'
