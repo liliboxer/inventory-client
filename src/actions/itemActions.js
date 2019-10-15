@@ -11,3 +11,4 @@ export const fetchItems = () => ({
   type: FETCH_ITEMS,
   payload: getItemsApi()
 });
+
