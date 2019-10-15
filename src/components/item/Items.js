@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Item from '../item/Item';
+import Item from '../../containers/Item';
 import styles from './Items.css';
 
 function Items({ items }) {
