@@ -22,9 +22,11 @@ class AllItems extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  items: getItemsState(state)
-});
+const mapStateToProps = state => {
+  return {
+    items: getItemsState(state)
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   fetch() {
