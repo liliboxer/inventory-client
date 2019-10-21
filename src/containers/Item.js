@@ -29,6 +29,9 @@ class Item extends Component {
             <p className={styles.quantity}>{item.quantity}</p>
             <button onClick={increment}>+</button>
           </div>
+          <div>
+            <button>Edit</button>
+          </div>
         </div>
       </section>
     );
