@@ -11,12 +11,13 @@ class Item extends Component {
       name: PropTypes.string.isRequired,
       quantity: PropTypes.number.isRequired 
     }).isRequired,
-    increment: PropTypes.func.isRequired,
-    decrement: PropTypes.func.isRequired
-  }
+    edit: PropTypes.func.isRequired
+  };
+
+  
 
   render() {
-    const { item, increment, decrement } = this.props;
+    const { item, edit } = this.props;
     return (
       <section className={styles.Item}>
         <div className={styles.itemWrapper}>
@@ -25,12 +26,12 @@ class Item extends Component {
             <p className={styles.category}>{item.category}</p>
           </div>
           <div className={styles.itemQuantity}>
-            <button onClick={decrement}>-</button>
+            {/* <button onClick={decrement}>-</button> */}
             <p className={styles.quantity}>{item.quantity}</p>
-            <button onClick={increment}>+</button>
+            {/* <button onClick={increment}>+</button> */}
           </div>
           <div>
-            <button>Edit</button>
+            <button onClick={edit}>Edit</button>
           </div>
         </div>
       </section>
@@ -39,11 +40,8 @@ class Item extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  increment() {
-    console.log('increment');
-  },
-  decrement() {
-    console.log('decrement');
+  edit() {
+    console.log('edit button clicked');
   }
 });
 
