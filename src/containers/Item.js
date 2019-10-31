@@ -14,8 +14,6 @@ class Item extends Component {
     edit: PropTypes.func.isRequired
   };
 
-  
-
   render() {
     const { item, edit } = this.props;
     return (
