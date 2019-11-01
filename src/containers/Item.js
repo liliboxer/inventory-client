@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import styles from './Item.css';
+import { addActiveItem } from '../actions/activeItemActions';
 
 class Item extends Component {
   static propTypes = {
@@ -29,7 +30,7 @@ class Item extends Component {
             {/* <button onClick={increment}>+</button> */}
           </div>
           <div>
-            <button onClick={edit}>Edit</button>
+            <button onClick={() => edit(item)}>Edit</button>
           </div>
         </div>
       </section>
@@ -38,8 +39,8 @@ class Item extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  edit() {
-    console.log('edit button clicked');
+  edit(item) {
+    return dispatch(addActiveItem(item));
   }
 });
 
