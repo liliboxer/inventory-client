@@ -11,7 +11,10 @@ function ItemForm(props) {
     quantity: 1
   });
 
-  // if activeItem
+  // if() {
+  //   updateItem({ ...existingItem, item: { ...existingItem } });
+  //   setEditing(true);
+  // }
 
   const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
   const createOptions = options => {
