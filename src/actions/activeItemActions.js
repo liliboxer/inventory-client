@@ -6,3 +6,11 @@ export const addActiveItem = item => {
     payload: item
   };
 };
+
+export const CLEAR_ACTIVE_ITEM = 'CLEAR_ACTIVE_ITEM';
+export const clearActiveItem = () => {
+  console.log('clear active item');
+  return {
+    type: CLEAR_ACTIVE_ITEM
+  };
+};

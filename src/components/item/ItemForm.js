@@ -4,11 +4,14 @@ import styles from './ItemForm.css';
 
 function ItemForm(props) {
   const { handleSubmit } = props.actions;
+  const [editing, setEditing] = useState(false);
   const [item, updateItem] = useState({
     category: '',
     name: '',
     quantity: 1
   });
+
+  // if activeItem
 
   const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
   const createOptions = options => {

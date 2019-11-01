@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import ItemForm from '../components/item/ItemForm';
 import { addItem } from '../actions/itemActions';
+import { clearActiveItem } from '../actions/activeItemActions';
 
 class AddItem extends Component {
   static propTypes = {
@@ -19,7 +20,8 @@ class AddItem extends Component {
 const mapDispatchToProps = dispatch => ({
   handleSubmit(item) {
     event.preventDefault();
-    return dispatch(addItem(item));
+    dispatch(addItem(item));
+    dispatch(clearActiveItem());
   }
 });
 
