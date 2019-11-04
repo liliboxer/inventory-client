@@ -4,7 +4,7 @@ import styles from './ItemForm.css';
 
 function ItemForm(props) {
   const { handleSubmit } = props.actions;
-  const [editing, setEditing] = useState(false);
+  // const [editing, setEditing] = useState(false);
   const [item, updateItem] = useState({
     category: '',
     name: '',
