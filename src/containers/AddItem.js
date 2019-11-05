@@ -8,13 +8,12 @@ import { clearActiveItem } from '../actions/activeItemActions';
 
 class AddItem extends Component {
   static propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
-    handleChange: PropTypes.func
+    handleSubmit: PropTypes.func.isRequired
   }
 
   render() {
-    const { handleSubmit, handleChange } = this.props;
-    return <ItemForm actions={{ handleSubmit, handleChange }}/>;
+    const { handleSubmit } = this.props;
+    return <ItemForm actions={{ handleSubmit }}/>;
   }
 }
 
@@ -23,9 +22,6 @@ const mapDispatchToProps = dispatch => ({
     event.preventDefault();
     dispatch(addItem(item));
     dispatch(clearActiveItem());
-  }, 
-  handleChange() {
-    console.log('change');
   }
 });
 

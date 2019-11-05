@@ -5,38 +5,39 @@ import styles from './ItemForm.css';
 
 class ItemForm extends Component {
   state = {
-    item: {
-      category: '',
-      name: '',
-      quantity: 1
-    }
+    category: '',
+    name: '',
+    quantity: 1
   }
 
   static propTypes = {
     actions: PropTypes.shape({
-      handleSubmit: PropTypes.func.isRequired,
-      handleChange: PropTypes.func
+      handleSubmit: PropTypes.func.isRequired
     }).isRequired
   }
 
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  }
+
   render() {
-    const { handleSubmit, handleChange } = this.props.actions;
-    const { item } = this.state;
+    const { handleSubmit } = this.props.actions;
+    const { category, name, quantity } = this.state;
+    
     const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
     const createOptions = options => {
       return options.map(option => (
-        <option key={option} value={option} >{option}</option>
+        <option key={option} value={category} >{option}</option>
       ));
     };
 
     return (
-      <form className={styles.ItemForm} 
-        onSubmit={() => handleSubmit(item)}>
+      <form className={styles.ItemForm} onSubmit={() => handleSubmit({ category, name, quantity })}>
         <fieldset>
           <select 
             defaultValue={'DEFAULT'} 
             name="categories"
-            onChange={e => handleChange({ ...item, category: e.target.value })}>
+            onChange={this.handleChange}>
             <option 
               value="DEFAULT" 
               disabled>Category</option>
@@ -46,26 +47,28 @@ class ItemForm extends Component {
         <fieldset>
           <input 
             type="text"
-            value={item.name}
+            name="name"
+            value={name}
             placeholder="item"
-            onChange={e => handleChange({ ...item, name: e.target.value })}>
+            onChange={this.handleChange}>
           </input>
         </fieldset>
         <fieldset>
           <input 
             type="text" 
-            value={item.quantity} 
+            name="quantity"
+            value={quantity} 
             placeholder="quantity"
-            onChange={e => handleChange({ ...item, quantity: e.target.value })}>
+            onChange={this.handleChange}>
           </input>
         </fieldset>
         <button>Submit</button>
       </form>
     );
-    
   }
-
-
 }
 
 export default connect()(ItemForm);
+
+// listener for activeItem state 
+// one part of the handshake, need the other 
