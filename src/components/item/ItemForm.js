@@ -13,7 +13,8 @@ class ItemForm extends Component {
 
   static propTypes = {
     actions: PropTypes.shape({
-      handleSubmit: PropTypes.func.isRequired
+      handleSubmit: PropTypes.func.isRequired,
+      handleUpdate: PropTypes.func
     }).isRequired,
     activeItem: PropTypes.object
   }
@@ -23,7 +24,7 @@ class ItemForm extends Component {
   }
 
   render() {
-    const { handleSubmit } = this.props.actions;
+    const { handleSubmit, handleUpdate } = this.props.actions;
     const { category, name, quantity } = this.state;
     const { activeItem } = this.props;
 
@@ -72,6 +73,7 @@ class ItemForm extends Component {
           </input>
         </fieldset>
         <button onClick={() => handleSubmit({ category, name, quantity })}>Submit</button>
+        <button onClick={() => handleUpdate()}>Update Item</button>
       </form>
     );
   }
