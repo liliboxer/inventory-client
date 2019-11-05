@@ -23,11 +23,11 @@ class ItemForm extends Component {
   render() {
     const { handleSubmit } = this.props.actions;
     const { category, name, quantity } = this.state;
-    
+
     const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
     const createOptions = options => {
       return options.map(option => (
-        <option key={option} value={category} >{option}</option>
+        <option key={option} value={option}>{option}</option>
       ));
     };
 
@@ -36,7 +36,7 @@ class ItemForm extends Component {
         <fieldset>
           <select 
             defaultValue={'DEFAULT'} 
-            name="categories"
+            name="category"
             onChange={this.handleChange}>
             <option 
               value="DEFAULT" 
