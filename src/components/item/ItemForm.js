@@ -28,11 +28,7 @@ class ItemForm extends Component {
     const { category, name, quantity } = this.state;
     const { activeItem } = this.props;
 
-    if(!activeItem) {
-      console.log('no active item');
-    } else {
-      console.log('activeItem', activeItem);
-    }
+    console.log(activeItem);
 
     const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
     const createOptions = options => {
@@ -89,3 +85,5 @@ export default connect(
 
 // listener for activeItem state 
 // one part of the handshake, need the other 
+
+// activeItem id matches with item id;
