@@ -25,10 +25,9 @@ class ItemForm extends Component {
 
   render() {
     const { handleSubmit, handleUpdate } = this.props.actions;
-    const { category, name, quantity } = this.state;
     const { activeItem } = this.props;
 
-    console.log(activeItem);
+    const { category, name, quantity } = this.state;
 
     const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
     const createOptions = options => {
@@ -37,41 +36,80 @@ class ItemForm extends Component {
       ));
     };
 
-    return (
-      <form className={styles.ItemForm}>
-        <fieldset>
-          <select 
-            defaultValue={'DEFAULT'} 
-            name="category"
-            onChange={this.handleChange}>
-            <option 
-              value="DEFAULT" 
-              disabled>Category</option>
-            {createOptions(categories)}
-          </select>
-        </fieldset>
-        <fieldset>
-          <input 
-            type="text"
-            name="name"
-            value={name}
-            placeholder="item"
-            onChange={this.handleChange}>
-          </input>
-        </fieldset>
-        <fieldset>
-          <input 
-            type="text" 
-            name="quantity"
-            value={quantity} 
-            placeholder="quantity"
-            onChange={this.handleChange}>
-          </input>
-        </fieldset>
-        <button onClick={() => handleSubmit({ category, name, quantity })}>Submit</button>
-        <button onClick={() => handleUpdate()}>Update Item</button>
-      </form>
-    );
+    // if we are in editing mode 
+    if(activeItem.category !== '') {
+      console.log('active item category', activeItem.category);
+      return (
+        <form className={styles.ItemForm}>
+          <fieldset>
+            <select 
+              value={activeItem.category} 
+              name="category"
+              onChange={this.handleChange}>
+              <option 
+                disabled>Category</option>
+              {createOptions(categories)}
+            </select>
+          </fieldset>
+          <fieldset>
+            <input 
+              type="text"
+              name="name"
+              value={activeItem.name}
+              placeholder="item"
+              onChange={this.handleChange}>
+            </input>
+          </fieldset>
+          <fieldset>
+            <input 
+              type="text" 
+              name="quantity"
+              value={activeItem.quantity} 
+              placeholder="quantity"
+              onChange={this.handleChange}>
+            </input>
+          </fieldset>
+          <button onClick={() => handleUpdate()}>Update Item</button>
+        </form>
+      );
+    } else {
+      // otherwise we are in creating a new item
+      return (
+        <form className={styles.ItemForm}>
+          <fieldset>
+            <select 
+              defaultValue={'DEFAULT'} 
+              name="category"
+              onChange={this.handleChange}>
+              <option 
+                value="DEFAULT" 
+                disabled>Category</option>
+              {createOptions(categories)}
+            </select>
+          </fieldset>
+          <fieldset>
+            <input 
+              type="text"
+              name="name"
+              value={name}
+              placeholder="item"
+              onChange={this.handleChange}>
+            </input>
+          </fieldset>
+          <fieldset>
+            <input 
+              type="text" 
+              name="quantity"
+              value={quantity} 
+              placeholder="quantity"
+              onChange={this.handleChange}>
+            </input>
+          </fieldset>
+          <button onClick={() => handleSubmit({ category, name, quantity })}>Submit</button>
+        </form>
+      );
+    }
+
   }
 }
 
