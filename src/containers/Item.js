@@ -6,10 +6,8 @@ import styles from './Item.css';
 import { addActiveItem } from '../actions/activeItemActions';
 
 
-let url = new URL('http://localhost:7890/?name=&quantity=1'); 
-let params = new URLSearchParams(url.search.slice(1)); 
+let currentUrlParams = new URLSearchParams(window.location.search);
 
-  
 class Item extends Component {
   static propTypes = {
     item: PropTypes.shape({ 
@@ -17,11 +15,14 @@ class Item extends Component {
       name: PropTypes.string.isRequired,
       quantity: PropTypes.number.isRequired 
     }).isRequired,
-    edit: PropTypes.func.isRequired
+    edit: PropTypes.func.isRequired,
+    history: PropTypes.object
   };
 
   render() {
-    const { item, edit } = this.props;
+    const { item, edit, history } = this.props;
+
+    console.log(history);
 
     return (
       <section className={styles.Item}>
@@ -46,13 +47,14 @@ class Item extends Component {
 
 const mapDispatchToProps = dispatch => ({
   edit(item) {
-    console.log(item);
-    params.set('name', `${item.name}`);
-    params.set('quantity', `${item.quantity}`);
-    console.log(params.toString()); 
+    currentUrlParams.set('name', `${item.name}`);
+    currentUrlParams.set('quantity', `${item.quantity}`);
+    console.log(currentUrlParams.toString());
     dispatch(addActiveItem(item));
   }
 });
 
 
 export default connect(null, mapDispatchToProps)(Item);
+
+//  this.props.history.push(window.location.pathname + '?' + currentUrlParams.toString());

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Item from '../../containers/Item';
 import styles from './Items.css';
 
-function Items({ items }) {
+function Items({ items, history }) {
   const itemsElement = items.map((item, i) => (
     <li key={i}>
-      <Item item={item}/>
+      <Item item={item} history={history}/>
     </li>
   ));
   
@@ -15,7 +15,8 @@ function Items({ items }) {
 }
 
 Items.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array,
+  history: PropTypes.object
 };
 
 export default Items;

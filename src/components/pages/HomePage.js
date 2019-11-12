@@ -1,17 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Header from '../Header';
 import Footer from '../Footer';
+
 import AddItem from '../../containers/AddItem';
 import AllItems from '../../containers/AllItems';
 
-export default function HomePage() {
+function HomePage({ history }) {
+  console.log(history);
   return (
     <>
       <Header />
       <AddItem />
-      <AllItems />
+      <AllItems props={history} />
       <Footer />
     </>
   );
-
 }
+
+HomePage.propTypes = {
+  history: PropTypes.object
+};
+
+export default HomePage;
