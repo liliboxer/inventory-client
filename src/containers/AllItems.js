@@ -10,7 +10,6 @@ class AllItems extends Component {
   static propTypes = {
     items: PropTypes.array.isRequired,
     fetch: PropTypes.func.isRequired,
-    history: PropTypes.object
   }
 
   componentDidMount() {
@@ -18,8 +17,8 @@ class AllItems extends Component {
   }
 
   render() {
-    const { items, history } = this.props;
-    return <Items items={items} history={history}/>;
+    const { items } = this.props;
+    return <Items items={items}/>;
   }
 }
 

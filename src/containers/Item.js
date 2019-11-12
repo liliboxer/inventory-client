@@ -16,13 +16,10 @@ class Item extends Component {
       quantity: PropTypes.number.isRequired 
     }).isRequired,
     edit: PropTypes.func.isRequired,
-    history: PropTypes.object
   };
 
   render() {
-    const { item, edit, history } = this.props;
-
-    console.log(history);
+    const { item, edit } = this.props;
 
     return (
       <section className={styles.Item}>
