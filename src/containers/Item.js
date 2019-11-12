@@ -5,6 +5,11 @@ import { connect } from 'react-redux';
 import styles from './Item.css';
 import { addActiveItem } from '../actions/activeItemActions';
 
+
+let url = new URL('http://localhost:7890/?name=&quantity=1'); 
+let params = new URLSearchParams(url.search.slice(1)); 
+
+  
 class Item extends Component {
   static propTypes = {
     item: PropTypes.shape({ 
@@ -17,6 +22,7 @@ class Item extends Component {
 
   render() {
     const { item, edit } = this.props;
+
     return (
       <section className={styles.Item}>
         <div className={styles.itemWrapper}>
@@ -40,7 +46,11 @@ class Item extends Component {
 
 const mapDispatchToProps = dispatch => ({
   edit(item) {
-    return dispatch(addActiveItem(item));
+    console.log(item);
+    params.set('name', `${item.name}`);
+    params.set('quantity', `${item.quantity}`);
+    console.log(params.toString()); 
+    dispatch(addActiveItem(item));
   }
 });
 
