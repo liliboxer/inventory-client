@@ -27,13 +27,25 @@ class ItemForm extends Component {
     const { handleSubmit, handleUpdate } = this.props.actions;
     const { activeItem } = this.props;
 
+
     console.log('activeItem', activeItem);
 
     let { category, name, quantity } = this.state;
 
     if(activeItem.name !== '') {
+      category = activeItem.category;
       name = activeItem.name;
+      
     }
+
+
+    let selectProps = {
+      defaultValue: 'DEFAULT',
+      name: 'category',
+      onChange: this.handleChange
+    };
+
+    if(category) selectProps.value = category;
 
     console.log('state', this.state);
     
@@ -47,10 +59,9 @@ class ItemForm extends Component {
     return (
       <form className={styles.ItemForm}>
         <fieldset>
-          <select 
-            defaultValue={'DEFAULT'} 
-            name="category"
-            onChange={this.handleChange}>
+          <select
+            {...selectProps}
+          >
             <option 
               value="DEFAULT" 
               disabled>Category</option>
