@@ -7,13 +7,12 @@ import Footer from '../Footer';
 import AddItem from '../../containers/AddItem';
 import AllItems from '../../containers/AllItems';
 
-function HomePage({ history }) {
-  console.log(history);
+function HomePage() {
   return (
     <>
       <Header />
       <AddItem />
-      <AllItems props={history} />
+      <AllItems/>
       <Footer />
     </>
   );

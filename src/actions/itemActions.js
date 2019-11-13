@@ -14,7 +14,6 @@ export const fetchItems = () => ({
 
 export const UPDATE_ITEM = 'UPDATE_ITEM';
 export const updateItem = (item) => {
-  console.log('itemActions', item);
   return {
     type: UPDATE_ITEM,
     payload: patchItem(item)

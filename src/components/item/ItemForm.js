@@ -27,7 +27,11 @@ class ItemForm extends Component {
     const { handleSubmit, handleUpdate } = this.props.actions;
     const { activeItem } = this.props;
 
+    console.log('activeItem', activeItem);
+
     const { category, name, quantity } = this.state;
+
+    console.log('state', this.state);
     
     const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
     const createOptions = options => {
@@ -75,9 +79,10 @@ class ItemForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  activeItem: getActiveItem(state)
-});
+const mapStateToProps = state => {
+  console.log('state in mapStateToProps', state);
+  return {  activeItem: getActiveItem(state) };
+};
 
 export default connect(
   mapStateToProps

@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 import styles from './Item.css';
 import { addActiveItem } from '../actions/activeItemActions';
 
-
-let currentUrlParams = new URLSearchParams(window.location.search);
-
 class Item extends Component {
   static propTypes = {
     item: PropTypes.shape({ 
@@ -44,9 +41,6 @@ class Item extends Component {
 
 const mapDispatchToProps = dispatch => ({
   edit(item) {
-    currentUrlParams.set('name', `${item.name}`);
-    currentUrlParams.set('quantity', `${item.quantity}`);
-    console.log(currentUrlParams.toString());
     dispatch(addActiveItem(item));
   }
 });
@@ -54,4 +48,4 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(null, mapDispatchToProps)(Item);
 
-//  this.props.history.push(window.location.pathname + '?' + currentUrlParams.toString());
+//  
