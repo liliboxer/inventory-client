@@ -30,8 +30,10 @@ class ItemForm extends Component {
 
     console.log('activeItem', activeItem);
 
+    // grab values out of state
     let { category, name, quantity } = this.state;
 
+    // assigning this to 
     if(activeItem.name !== '') {
       category = activeItem.category;
       name = activeItem.name;
