@@ -29,7 +29,11 @@ class ItemForm extends Component {
 
     console.log('activeItem', activeItem);
 
-    const { category, name, quantity } = this.state;
+    let { category, name, quantity } = this.state;
+
+    if(activeItem.name !== '') {
+      name = activeItem.name;
+    }
 
     console.log('state', this.state);
     
