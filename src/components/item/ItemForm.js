@@ -35,16 +35,17 @@ class ItemForm extends Component {
     if(activeItem.name !== '') {
       category = activeItem.category;
       name = activeItem.name;
-      
+      quantity = activeItem.quantity;
     }
 
-
+    // dictionary for select element so we can conditionaly render attributes 
     let selectProps = {
       defaultValue: 'DEFAULT',
       name: 'category',
       onChange: this.handleChange
     };
 
+    // conditionally adding the value attribute 
     if(category) selectProps.value = category;
 
     console.log('state', this.state);
