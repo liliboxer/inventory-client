@@ -87,11 +87,12 @@ class ItemForm extends Component {
             onChange={this.handleChange}>
           </input>
         </fieldset>
-        <button onClick={() => handleSubmit({ category, name, quantity })}>Submit</button>
-        <button onClick={() => handleUpdate()}>Update Item</button>
+        { category 
+          ? <button onClick={() => handleUpdate()}>Update Item</button> 
+          : <button onClick={() => handleSubmit({ category, name, quantity })}>Submit</button>
+        }
       </form>
     );
-
   }
 }
 
@@ -102,8 +103,3 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps
 )(ItemForm);
-
-// listener for activeItem state 
-// one part of the handshake, need the other 
-
-// activeItem id matches with item id;
