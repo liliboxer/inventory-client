@@ -27,33 +27,18 @@ class ItemForm extends Component {
     const { handleSubmit, handleUpdate } = this.props.actions;
     const { activeItem } = this.props;
 
-
-    console.log('activeItem', activeItem);
-
     // grab values out of state
     let { category, name, quantity } = this.state;
-
-    console.log('name in render (1)', name);
 
     // conditionally using active item for each attribute 
     // unless we already have state for that attribute 
     if(activeItem.name) {
-      if(category === '') {
-        category = activeItem.category;
-      }
+      if(category === '') category = activeItem.category;
       
-      if(name === '') {
-        name = activeItem.name;
-      }
+      if(name === '') name = activeItem.name;
       
-      if(quantity === '') {
-        quantity = activeItem.quantity;
-      }
+      if(quantity === '') quantity = activeItem.quantity;
     }
-
-
-
-    console.log('name in render (2)', name);
 
     // dictionary for select element so we can conditionaly render attributes 
     let selectProps = {
@@ -65,8 +50,6 @@ class ItemForm extends Component {
     // conditionally adding the value attribute 
     if(category) selectProps.value = category;
 
-    console.log('state', this.state);
-    
     const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
     const createOptions = options => {
       return options.map(option => (
@@ -112,10 +95,9 @@ class ItemForm extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  console.log('state in mapStateToProps', state);
-  return {  activeItem: getActiveItem(state) };
-};
+const mapStateToProps = state => ({
+  activeItem: getActiveItem(state)
+});
 
 export default connect(
   mapStateToProps
