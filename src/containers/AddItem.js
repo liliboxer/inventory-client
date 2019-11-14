@@ -24,11 +24,10 @@ const mapDispatchToProps = dispatch => ({
     dispatch(addItem(item));
     dispatch(clearActiveItem());
   },
-  handleUpdate(item) {
+  handleUpdate() {
     event.preventDefault();
     dispatch(clearActiveItem());
     console.log('handleUpdate');
-    console.log(item);
   }
 });
 
