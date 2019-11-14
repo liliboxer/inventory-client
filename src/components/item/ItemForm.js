@@ -27,7 +27,8 @@ class ItemForm extends Component {
     const { handleSubmit, handleUpdate } = this.props.actions;
     const { activeItem } = this.props;
 
-    console.log(activeItem);
+    console.log('activeItem', activeItem);
+    console.log('state', this.state);
 
     // grab values out of state
     let { category, name, quantity } = this.state;

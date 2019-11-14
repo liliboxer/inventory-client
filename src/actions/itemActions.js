@@ -1,4 +1,4 @@
-import { postItem, getItemsApi, patchItem } from '../services/inventoryApi';
+import { postItem, getItemsApi } from '../services/inventoryApi';
 
 export const ADD_ITEM = 'ADD_ITEM';
 export const addItem = item => ({
@@ -11,12 +11,4 @@ export const fetchItems = () => ({
   type: FETCH_ITEMS,
   payload: getItemsApi()
 });
-
-export const UPDATE_ITEM = 'UPDATE_ITEM';
-export const updateItem = (item) => {
-  return {
-    type: UPDATE_ITEM,
-    payload: patchItem(item)
-  };
-};
 

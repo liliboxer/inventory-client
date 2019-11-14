@@ -23,18 +23,3 @@ export const getItemsApi = () => {
       return res.json();
     });
 };
-
-export const patchItem = (item) => {
-  console.log(item);
-  return fetch(`http://localhost:7891/api/v1/items${item._id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ item })
-  })
-    .then(res => {
-      if(!res.ok) throw `Unable to update item ${item._id}.`;
-      return res.json();
-    });
-};
