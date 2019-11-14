@@ -18,10 +18,3 @@ export default function activeItemReducer(state = initialState, action) {
       return state;
   }
 }
-
-// active item reducer
-// edit button will store that item in active item reducer 
-// from that reducer i have access to the item
-
-// selector: grab active item
-// default form set 

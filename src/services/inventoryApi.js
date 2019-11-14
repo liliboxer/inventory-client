@@ -25,7 +25,8 @@ export const getItemsApi = () => {
 };
 
 export const patchItem = (item) => {
-  return fetch('http://localhost:7891/api/v1/items', {
+  console.log(item);
+  return fetch(`http://localhost:7891/api/v1/items${item._id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
