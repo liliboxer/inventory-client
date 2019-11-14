@@ -26,9 +26,7 @@ class Item extends Component {
             <p className={styles.category}>{item.category}</p>
           </div>
           <div className={styles.itemQuantity}>
-            {/* <button onClick={decrement}>-</button> */}
             <p className={styles.quantity}>{item.quantity}</p>
-            {/* <button onClick={increment}>+</button> */}
           </div>
           <div>
             <button onClick={() => edit(item)}>Edit</button>
@@ -45,7 +43,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-
 export default connect(null, mapDispatchToProps)(Item);
-
-//  

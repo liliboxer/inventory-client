@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -7,7 +6,7 @@ import Footer from '../Footer';
 import AddItem from '../../containers/AddItem';
 import AllItems from '../../containers/AllItems';
 
-function HomePage() {
+export default function HomePage() {
   return (
     <>
       <Header />
@@ -17,9 +16,3 @@ function HomePage() {
     </>
   );
 }
-
-HomePage.propTypes = {
-  history: PropTypes.object
-};
-
-export default HomePage;
