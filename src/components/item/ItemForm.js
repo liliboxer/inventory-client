@@ -8,7 +8,7 @@ class ItemForm extends Component {
   state = {
     category: '',
     name: '',
-    quantity: 1
+    quantity: ''
   }
 
   static propTypes = {
@@ -33,12 +33,27 @@ class ItemForm extends Component {
     // grab values out of state
     let { category, name, quantity } = this.state;
 
-    // assigning this to 
-    if(activeItem.name !== '') {
-      category = activeItem.category;
-      name = activeItem.name;
-      quantity = activeItem.quantity;
+    console.log('name in render (1)', name);
+
+    // conditionally using active item for each attribute 
+    // unless we already have state for that attribute 
+    if(activeItem.name) {
+      if(category === '') {
+        category = activeItem.category;
+      }
+      
+      if(name === '') {
+        name = activeItem.name;
+      }
+      
+      if(quantity === '') {
+        quantity = activeItem.quantity;
+      }
     }
+
+
+
+    console.log('name in render (2)', name);
 
     // dictionary for select element so we can conditionaly render attributes 
     let selectProps = {
