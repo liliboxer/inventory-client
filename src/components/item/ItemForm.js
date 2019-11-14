@@ -27,6 +27,8 @@ class ItemForm extends Component {
     const { handleSubmit, handleUpdate } = this.props.actions;
     const { activeItem } = this.props;
 
+    console.log(activeItem);
+
     // grab values out of state
     let { category, name, quantity } = this.state;
 
@@ -49,6 +51,8 @@ class ItemForm extends Component {
 
     // conditionally adding the value attribute 
     if(category) selectProps.value = category;
+
+    // category ? selectProps.value = category : selectProps.value = selectProps.defaultValue;
 
     const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
     const createOptions = options => {
