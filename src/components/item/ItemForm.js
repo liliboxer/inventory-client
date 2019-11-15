@@ -107,8 +107,3 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps
 )(ItemForm);
-
-
-// reset form button should:
-///reset form values all to default 
-/// clear out activeItem from redux
