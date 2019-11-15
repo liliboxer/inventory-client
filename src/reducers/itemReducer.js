@@ -11,6 +11,7 @@ export default function itemReducer(state = initialState, action) {
     case FETCH_ITEMS:
       return { ...state, items: action.payload };
     case UPDATE_ITEM:
+      console.log('action.payload', action.payload);
       return { ...state, items: [...state.items.filter(item => item._id !== action.payload._id), Object.assign({}, action.payload)] };
     default:
       return state;
