@@ -28,8 +28,6 @@ class ItemForm extends Component {
     const { activeItem } = this.props;
 
     console.log('activeItem', activeItem);
-    console.log('state', this.state);
-
     // grab values out of state
     let { category, name, quantity } = this.state;
 
@@ -88,8 +86,8 @@ class ItemForm extends Component {
             onChange={this.handleChange}>
           </input>
         </fieldset>
-        { activeItem.name
-          ? <button onClick={() => handleUpdate(activeItem)}>Update Item</button> 
+        { activeItem._id
+          ? <button onClick={() => handleUpdate({ _id: activeItem._id, category, name, quantity })}>Update Item</button> 
           : <button onClick={() => handleSubmit({ category, name, quantity })}>Submit</button>
         }
       </form>
