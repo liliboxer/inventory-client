@@ -66,9 +66,7 @@ class ItemForm extends Component {
     return (
       <form className={styles.ItemForm}>
         <fieldset>
-          <select
-            {...selectProps}
-          >
+          <select {...selectProps}>
             <option 
               value="DEFAULT" 
               disabled>Category</option>
@@ -97,7 +95,6 @@ class ItemForm extends Component {
           ? <button onClick={() => handleUpdate()}>Update Item</button> 
           : <button onClick={() => handleSubmit({ category, name, quantity })}>Submit</button>
         }
-        <button>Reset Form</button> 
       </form>
     );
   }
