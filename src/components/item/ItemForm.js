@@ -52,9 +52,6 @@ class ItemForm extends Component {
 
     // conditionally adding the value attribute 
     if(category) selectProps.value = category;
-    // category ? selectProps.value = category : selectProps.value = selectProps.defaultValue;
-
-
 
     const categories = ['Clothing', 'Books', 'Miscellaneous', 'Sentimental'];
     const createOptions = options => {
@@ -92,7 +89,7 @@ class ItemForm extends Component {
           </input>
         </fieldset>
         { activeItem.name
-          ? <button onClick={() => handleUpdate()}>Update Item</button> 
+          ? <button onClick={() => handleUpdate(activeItem)}>Update Item</button> 
           : <button onClick={() => handleSubmit({ category, name, quantity })}>Submit</button>
         }
       </form>
