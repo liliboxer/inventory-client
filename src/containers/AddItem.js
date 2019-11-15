@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import ItemForm from '../components/item/ItemForm';
-import { addItem } from '../actions/itemActions';
+import { addItem, updateItem } from '../actions/itemActions';
 import { clearActiveItem } from '../actions/activeItemActions';
 
 class AddItem extends Component {
@@ -26,8 +26,8 @@ const mapDispatchToProps = dispatch => ({
   },
   handleUpdate() {
     event.preventDefault();
+    dispatch(updateItem());
     dispatch(clearActiveItem());
-    console.log('handleUpdate');
   }
 });
 
